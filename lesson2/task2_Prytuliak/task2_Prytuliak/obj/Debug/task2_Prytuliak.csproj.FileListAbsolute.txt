@@ -1,0 +1,6 @@
+C:\VS_Projects\lesson2\task2_Prytuliak\task2_Prytuliak\bin\Debug\task2_Prytuliak.exe.config
+C:\VS_Projects\lesson2\task2_Prytuliak\task2_Prytuliak\obj\Debug\task2_Prytuliak.csprojResolveAssemblyReference.cache
+C:\VS_Projects\lesson2\task2_Prytuliak\task2_Prytuliak\bin\Debug\task2_Prytuliak.exe
+C:\VS_Projects\lesson2\task2_Prytuliak\task2_Prytuliak\bin\Debug\task2_Prytuliak.pdb
+C:\VS_Projects\lesson2\task2_Prytuliak\task2_Prytuliak\obj\Debug\task2_Prytuliak.exe
+C:\VS_Projects\lesson2\task2_Prytuliak\task2_Prytuliak\obj\Debug\task2_Prytuliak.pdb
