@@ -10,9 +10,9 @@ namespace Lesson3
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter Array size from 1 to :");
-
+            Console.WriteLine("Enter Array size in range 1-214748300:");
             int iArraySize = Int32.Parse(Console.ReadLine());
+                    
             int[] iArray = new int[iArraySize];
             int i, iMax, iMin;
                     
