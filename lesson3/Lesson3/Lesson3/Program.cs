@@ -10,28 +10,43 @@ namespace Lesson3
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter Array size:");
+            Console.WriteLine("Enter Array size from 1 to :");
 
             int iArraySize = Int32.Parse(Console.ReadLine());
             int[] iArray = new int[iArraySize];
             int i, iMax, iMin;
-                     
+                    
             Console.WriteLine("Fill array with numbers. After each number click Enter button");
        
             for (i = 0; i < iArraySize; i++)
             {
                 Console.Write("Enter {0}:", i);
                 iArray[i] = Int32.Parse(Console.ReadLine());
-
             }
-             Console.WriteLine("You entered next values:");
+    
+            iMax = iArray[0];
+            iMin = iArray[0];
+
             for (i = 0; i < iArraySize; i++)
-             {
-              Console.WriteLine(iArray[i]);
-              }
-            Console.WriteLine("min: {0}", iArray.Min());
-            Console.WriteLine("max: {0}", iArray.Max());
-                    
+            {
+                if (iMax < iArray[i])
+                {
+                    iMax = iArray[i];
+                }
+            }
+
+            Console.WriteLine("Maximum value is: {0}", +iMax);
+
+            for (i = 0; i < iArraySize; i++)
+            {
+                if (iMin > iArray[i])
+                {
+                    iMin = iArray[i];
+                }
+            }
+
+            Console.WriteLine("Minimum value is: {0}", +iMin);
+            
             Console.ReadLine();
         }
         
