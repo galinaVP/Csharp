@@ -11,9 +11,10 @@ namespace Lesson3
         static void Main(string[] args)
         {
             Console.WriteLine("Enter Array size:");
+
             int iArraySize = Int32.Parse(Console.ReadLine());
-            int i;
             int[] iArray = new int[iArraySize];
+            int i, iMax, iMin;
                      
             Console.WriteLine("Fill array with numbers. After each number click Enter button");
        
@@ -23,12 +24,14 @@ namespace Lesson3
                 iArray[i] = Int32.Parse(Console.ReadLine());
 
             }
-
-            Console.WriteLine("You entered next values:");
+             Console.WriteLine("You entered next values:");
             for (i = 0; i < iArraySize; i++)
-            {
-                Console.WriteLine(iArray[i]);
-            }
+             {
+              Console.WriteLine(iArray[i]);
+              }
+            Console.WriteLine("min: {0}", iArray.Min());
+            Console.WriteLine("max: {0}", iArray.Max());
+                    
             Console.ReadLine();
         }
         
