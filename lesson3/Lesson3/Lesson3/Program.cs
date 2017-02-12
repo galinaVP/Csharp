@@ -29,22 +29,17 @@ namespace Lesson3
 
             for (i = 0; i < iArraySize; i++)
             {
-                if (iMax < iArray[i])
+                if (iMax < iArray[i]) 
                 {
                     iMax = iArray[i];
                 }
-            }
-
-            Console.WriteLine("Maximum value is: {0}", +iMax);
-
-            for (i = 0; i < iArraySize; i++)
-            {
                 if (iMin > iArray[i])
                 {
                     iMin = iArray[i];
                 }
             }
-
+        
+            Console.WriteLine("Maximum value is: {0}", +iMax);
             Console.WriteLine("Minimum value is: {0}", +iMin);
             
             Console.ReadLine();
