@@ -10,13 +10,11 @@ namespace Lesson3
     {
         static void Main(string[] args)
         {
-            int iArraySize, i;
-            int[] iArray = new int[10];
-
-
-            Console.WriteLine("Enter array size:");
-            iArraySize = Int32.Parse(Console.ReadLine());
-
+            Console.WriteLine("Enter Array size:");
+            int iArraySize = Int32.Parse(Console.ReadLine());
+            int i;
+            int[] iArray = new int[iArraySize];
+                     
             Console.WriteLine("Fill array with numbers. After each number click Enter button");
        
             for (i = 0; i < iArraySize; i++)
