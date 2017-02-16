@@ -8,7 +8,7 @@ namespace lesson4
 {
     class Program
     {
-        static int i, j;
+        static int i, j,n;
         static void Main(string[] args)
         {
             Console.WriteLine("Array will be created randomly from the range of numbers: 1-1000");
@@ -33,16 +33,15 @@ namespace lesson4
         static void Bubble(int[] iArray)
         {
             bool bSwappingTrue = true;
-
             while (bSwappingTrue)
             {
                 bSwappingTrue = false;
                 j++;
                 for (i = 0; i < iArray.Length; i++)
                 {
-                    for (j = i + 1; j < iArray.Length; j++)
+                    for (n=i+1; n < iArray.Length; n++)
                     {
-                        if (iArray[i] > iArray[j])
+                        if (iArray[i] > iArray[n])
                         {
                             SwapMethod(iArray);
                             bSwappingTrue = true;
