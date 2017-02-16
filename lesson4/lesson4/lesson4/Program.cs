@@ -15,33 +15,40 @@ namespace lesson4
             Console.WriteLine("Enter the array size you want to see for next operations:");
             int iArraySize = Int32.Parse(Console.ReadLine());
             int iMinArrayRange = 1, iMaxArrayRange = 1000;
-            int[] iArray = new int[iArraySize];                                                          
+            int[] iArray = new int[iArraySize];
             Random RandomArray = new Random();
 
             for (i = 0; i < iArray.Length; i++)
-              {
+            {
                 iArray[i] = RandomArray.Next(iMinArrayRange, iMaxArrayRange);
-              }
+            }
 
             PrintArray(iArray);
             Console.WriteLine("Sorted with Bubble method array: ");
             Bubble(iArray);
-            
+
             Console.ReadLine();
         }
 
         static void Bubble(int[] iArray)
         {
+            bool bSwappingTrue = true;
 
-            for (i = 0; i < iArray.Length; i++)
+            while (bSwappingTrue)
             {
-                for (j = i + 1; j < iArray.Length; j++)
+                bSwappingTrue = false;
+                j++;
+                for (i = 0; i < iArray.Length; i++)
                 {
-                    if (iArray[i] > iArray[j])
+                    for (j = i + 1; j < iArray.Length; j++)
                     {
-                        SwapMethod(iArray);
+                        if (iArray[i] > iArray[j])
+                        {
+                            SwapMethod(iArray);
+                            bSwappingTrue = true;
+                        }
                     }
-                }
+                } 
             }
             PrintArray(iArray);
         }
@@ -49,9 +56,10 @@ namespace lesson4
         static int[] SwapMethod(int[] iArray)
         {
             int iTempforSwap;
+
             iTempforSwap = iArray[i];
-            iArray[i] = iArray[j];
-            iArray[j] = iTempforSwap;
+            iArray[i] = iArray[i + 1];
+            iArray[i + 1] = iTempforSwap;
             return iArray;
         }
 
@@ -64,4 +72,5 @@ namespace lesson4
         }
 
     }
+   
 }
