@@ -8,7 +8,7 @@ namespace lesson4
 {
     class Program
     {
-        static int i, j,n;
+        static int i,j;
         static void Main(string[] args)
         {
             Console.WriteLine("Array will be created randomly from the range of numbers: 1-1000");
@@ -26,6 +26,8 @@ namespace lesson4
             PrintArray(iArray);
             Console.WriteLine("Sorted with Bubble method array: ");
             Bubble(iArray);
+            Console.WriteLine("Sorted with Insertion method array: ");
+            InsertionMethod(iArray);
 
             Console.ReadLine();
         }
@@ -36,17 +38,13 @@ namespace lesson4
             while (bSwappingTrue)
             {
                 bSwappingTrue = false;
-                j++;
-                for (i = 0; i < iArray.Length; i++)
+                for (i = 0; i < iArray.Length-1; i++)
                 {
-                    for (n=i+1; n < iArray.Length; n++)
-                    {
-                        if (iArray[i] > iArray[n])
+                        if (iArray[i] > iArray[i+1])
                         {
                             SwapMethod(iArray);
                             bSwappingTrue = true;
                         }
-                    }
                 } 
             }
             PrintArray(iArray);
@@ -61,6 +59,16 @@ namespace lesson4
             iArray[i + 1] = iTempforSwap;
             return iArray;
         }
+        static int[] SwapMethodInsertion(int[] iArray)
+        {
+            int iTempforSwap;
+
+            iTempforSwap = iArray[j-1];
+            iArray[j-1] = iArray[j];
+            iArray[j] = iTempforSwap;
+            j--;
+            return iArray;
+        }
 
         static void PrintArray(int[] iArray)
         {
@@ -68,6 +76,24 @@ namespace lesson4
             {
                 Console.WriteLine("Element {0} {1}", i, iArray[i]);
             }
+            Console.ReadLine();
+        }
+        static void InsertionMethod(int[] iArray)
+        {
+            for (i = 0; i<iArray.Length-1; i++)
+            {
+                int j = i;
+                while (j > 0)
+                {
+                    if (iArray[j-1] > iArray[j])
+                    {
+                        SwapMethodInsertion(iArray);
+                    }
+                    else
+                        break;
+                }                              
+            }
+          PrintArray(iArray);
         }
 
     }
