@@ -22,12 +22,16 @@ namespace lesson4
             {
                 iArray[i] = RandomArray.Next(iMinArrayRange, iMaxArrayRange);
             }
+            int[] iArraySecond = new int[] {233, 44, 555, 33, 33, 2, 1123, 455, 78, 43};
 
             PrintArray(iArray);
             Console.WriteLine("Sorted with Bubble method array: ");
             Bubble(iArray);
+
+            PrintArraySecond(iArraySecond);
             Console.WriteLine("Sorted with Insertion method array: ");
-            InsertionMethod(iArray);
+            InsertionMethod(iArraySecond);
+            PrintArraySecond(iArraySecond);
 
             Console.ReadLine();
         }
@@ -38,14 +42,14 @@ namespace lesson4
             while (bSwappingTrue)
             {
                 bSwappingTrue = false;
-                for (i = 0; i < iArray.Length-1; i++)
+                for (i = 0; i < iArray.Length - 1; i++)
                 {
-                        if (iArray[i] > iArray[i+1])
-                        {
-                            SwapMethod(iArray);
-                            bSwappingTrue = true;
-                        }
-                } 
+                    if (iArray[i] > iArray[i + 1])
+                    {
+                        SwapMethod(iArray);
+                        bSwappingTrue = true;
+                    }
+                }
             }
             PrintArray(iArray);
         }
@@ -59,15 +63,15 @@ namespace lesson4
             iArray[i + 1] = iTempforSwap;
             return iArray;
         }
-        static int[] SwapMethodInsertion(int[] iArray)
+        static int[] SwapMethodInsertion(int[] iArraySecond)
         {
             int iTempforSwap;
 
-            iTempforSwap = iArray[j-1];
-            iArray[j-1] = iArray[j];
-            iArray[j] = iTempforSwap;
-            j--;
-            return iArray;
+            iTempforSwap = iArraySecond[j-1];
+            iArraySecond[j-1] = iArraySecond[j];
+            iArraySecond[j] = iTempforSwap;
+
+            return iArraySecond;
         }
 
         static void PrintArray(int[] iArray)
@@ -78,22 +82,32 @@ namespace lesson4
             }
             Console.ReadLine();
         }
-        static void InsertionMethod(int[] iArray)
+        static void PrintArraySecond(int[] iArraySecond)
         {
-            for (i = 0; i<iArray.Length-1; i++)
+            for (i = 0; i < iArraySecond.Length; i++)
             {
-                int j = i;
+                Console.WriteLine("Element {0} {1}", i, iArraySecond[i]);
+            }
+            Console.ReadLine();
+        }
+        static void InsertionMethod(int[] iArraySecond)
+        {
+            for (i = 0; i< iArraySecond.Length; i++)
+            {
+                j = i;
+                
                 while (j > 0)
                 {
-                    if (iArray[j-1] > iArray[j])
+                    if (iArraySecond[j-1] > iArraySecond[j])
                     {
-                        SwapMethodInsertion(iArray);
+                        SwapMethodInsertion(iArraySecond);
+                        j--;
+                       
                     }
                     else
                         break;
                 }                              
             }
-          PrintArray(iArray);
         }
 
     }
