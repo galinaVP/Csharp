@@ -22,7 +22,13 @@ namespace lesson4
             {
                 iArray[i] = RandomArray.Next(iMinArrayRange, iMaxArrayRange);
             }
-            int[] iArraySecond = new int[] {233, 44, 555, 33, 33, 2, 1123, 455, 78, 43};
+            int[] iArraySecond = new int[10];
+            Random RandomArraySecond = new Random();
+
+            for (i = 0; i < iArraySecond.Length; i++)
+            {
+                iArraySecond[i] = RandomArraySecond.Next(iMinArrayRange, iMaxArrayRange);
+            }
 
             PrintArray(iArray);
             Console.WriteLine("Sorted with Bubble method array: ");
