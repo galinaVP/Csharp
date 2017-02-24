@@ -10,31 +10,26 @@ namespace lesson6
     {
         public BubbleSort(int[] iArray) : base(iArray)
         {
-
         }
-        
+
         public override void Sort()                                
         {
-                        
             bool bSwappingTrue = true;
             while (bSwappingTrue)
             {
                 bSwappingTrue = false;
 
-                for (int i = 0; i < iArrayInternalToSort.Length-1; i++)
+                for (int i = 0; i < iArrayInternalToSort.Length - 1; i++)
                 {
-                    for (int j = i + 1; j < iArrayInternalToSort.Length; j++)
+                    if (iArrayInternalToSort[i] > iArrayInternalToSort[i + 1])
                     {
-                        if (iArrayInternalToSort[i] > iArrayInternalToSort[j] )
-                        {
-                            SwapMethod(i, j);
-                            bSwappingTrue = true;
-                        }
+                        SwapMethod(iArrayInternalToSort, i, i + 1);
+                        bSwappingTrue = true;
                     }
-                    
                 }
+              }
+
             }
+
         }
- 
-    }
 }

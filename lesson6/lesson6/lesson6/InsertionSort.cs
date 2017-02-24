@@ -6,27 +6,22 @@ using System.Threading.Tasks;
 
 namespace lesson6
 {
-    class InsertionSort : Sorter
+    class InsertionSort : Sorter                                     //base class is Sorter which containes Print and 
     {
-
         public InsertionSort(int[] iArray) : base(iArray)
         {
-
         }
-      
-       static int j;
-       
+
         public override void Sort()
         {
-            
             for (int i = 0; i < iArrayInternalToSort.Length-1; i++)
             {
-                j = i;
+                int j = i;
                 while (j > 0)
                 {
                     if (iArrayInternalToSort[j - 1] > iArrayInternalToSort[j])
                     {
-                        SwapMethod(i,j);
+                        SwapMethod(iArrayInternalToSort,j, j-1);
                         j--;
                     }
                     else

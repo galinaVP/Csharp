@@ -11,20 +11,20 @@ namespace lesson6
         public int[] iArrayInternalToSort;
         public Sorter(int[] iArray)
         {
-         iArrayInternalToSort = iArray;
+            iArrayInternalToSort = iArray;
         }
 
         public virtual void Sort()
         {
-
         }
-        public void SwapMethod(int i, int j)
+        public int[] SwapMethod(int[] iArrayInternalToSort, int index1, int index2)
         {
             int iTempforSwap;
 
-            iTempforSwap = iArrayInternalToSort[i];
-            iArrayInternalToSort[i] = iArrayInternalToSort[j];
-            iArrayInternalToSort[j] = iTempforSwap;
+            iTempforSwap = iArrayInternalToSort[index1];
+            iArrayInternalToSort[index1] = iArrayInternalToSort[index2];
+            iArrayInternalToSort[index2] = iTempforSwap;
+            return iArrayInternalToSort;
         }
 
         public void PrintArray()
