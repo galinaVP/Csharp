@@ -6,15 +6,12 @@ using System.Threading.Tasks;
 
 namespace lesson6
 {
-    class MyQueue
+    class MyQueue : Buffer
     {
-        private int iHead, iTail, iCount, iInternalSize, iValue;                     
-        private int[] iInternal;
-
-        public MyQueue(int iQueueSize)                                             
+        private int iHead, iTail, iCount, iValue;                     
+        
+        public MyQueue(int iArray) : base(iArray)                                             
         {
-            iInternalSize = iQueueSize;
-            iInternal = new int[iInternalSize];
         }
         public void Enqueue(int valueQueue)
         {
@@ -56,7 +53,7 @@ namespace lesson6
             }
         }
 
-        public bool IsEmpty()                     
+        public override bool IsEmpty()                     
         {
             if (iCount == 0)
             { return true; }
@@ -64,7 +61,7 @@ namespace lesson6
             { return false; }
         }
 
-        public bool IsFull()                          
+        public override bool IsFull()                          
         {
             if (iCount == iInternalSize)
             { return true; }
@@ -72,20 +69,11 @@ namespace lesson6
             { return false; }
         }
 
-        public int Peek()
+        public override void Peek()
         {
             Console.WriteLine("Current head value is {0}", iInternal[iHead]);
             Console.WriteLine("Current tail value is {0}", iInternal[iTail]);
             Console.WriteLine("Current count of values is {0}", iCount);
-            return iHead;
-        }
-        public void Print()
-        {
-            foreach (int item in iInternal)                                            
-            {
-                Console.WriteLine("Value {0}", item);
-            }
-
         }
     }
 }

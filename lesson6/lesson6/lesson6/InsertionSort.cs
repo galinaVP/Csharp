@@ -14,7 +14,7 @@ namespace lesson6
 
         public override void Sort()
         {
-            for (int i = 0; i < iArrayInternalToSort.Length-1; i++)
+            for (int i = 0; i < iArrayInternalToSort.Length; i++)
             {
                 int j = i;
                 while (j > 0)

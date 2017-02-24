@@ -80,7 +80,7 @@ namespace lesson6
                         break;
 
                     case 2:
-                        Console.WriteLine("The top position is {0}", StackInterface.Peek());
+                       StackInterface.Peek();
                         break;
 
                     case 3:

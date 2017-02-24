@@ -6,19 +6,13 @@ using System.Threading.Tasks;
 
 namespace lesson6
 {
-    class MyStack
+    class MyStack : Buffer
     {
         private int iTop = -1;
-        private int iInternalSize;
-        private int[] iInternal;
 
-        public MyStack(int iStackSize)
-        {
-            iInternalSize = iStackSize;
-            iInternal = new int[iInternalSize];
-
+        public MyStack(int iArray):base(iArray)
+        {    
         }
-
 
         public int Pop()
         {
@@ -52,7 +46,7 @@ namespace lesson6
 
         }
 
-        public bool IsEmpty()
+        public override bool IsEmpty()
         {
             if (iTop == -1)
             { return true; }
@@ -60,27 +54,18 @@ namespace lesson6
             { return false; }
         }
 
-        public bool IsFull()
+        public override bool IsFull()
         {
+            
             if (iTop == (iInternalSize - 1))
             { return true; }
             else
             { return false; }
         }
 
-        public int Peek()
+        public override void Peek()
         {
             Console.WriteLine("Current top value is {0}", iInternal[iTop]);
-            return iTop;
-        }
-
-        public void Print()
-        {
-            foreach (int item in iInternal)
-            {
-                Console.WriteLine("Value --- {0} ", item);
-            }
-
         }
     }
 }
