@@ -16,30 +16,30 @@ namespace lesson5
 
         public void Sort()                                //should be public - to have access from main programm where instance created
         {
-            int i;
+            
             bool bSwappingTrue = true;
             while (bSwappingTrue)
             {
                 bSwappingTrue = false;
                 
-                for (i = 0; i < iArrayInternalToSort.Length - 1; i++)
+                for (int i = 0; i < iArrayInternalToSort.Length - 1; i++)
                 {
                     if (iArrayInternalToSort[i] > iArrayInternalToSort[i+1])
                     {
-                        SwapMethod(i);
+                        SwapMethod(iArrayInternalToSort, i, i+1);
                         bSwappingTrue = true;
                     }
                 }
             }
         }
 
-        static int[] SwapMethod(int i)                                 // static method - will be used and seen only in this class
+        static int[] SwapMethod(int[] iArrayInternalToSort, int index1, int index2)                                 // static method - will be used and seen only in this class
         {
             int iTempforSwap;
             
-            iTempforSwap = iArrayInternalToSort[i];
-            iArrayInternalToSort[i] = iArrayInternalToSort[i+1];
-            iArrayInternalToSort[i+1] = iTempforSwap;
+            iTempforSwap = iArrayInternalToSort[index1];
+            iArrayInternalToSort[index1] = iArrayInternalToSort[index2];
+            iArrayInternalToSort[index2] = iTempforSwap;
             return iArrayInternalToSort;
         }
         

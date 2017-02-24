@@ -9,8 +9,7 @@ namespace lesson5
     class InsertionSort
     {
         static int[] iArrayInternalToSort;
-        static int j;
-
+       
         public InsertionSort(int[] iArray)
         {
             iArrayInternalToSort = iArray;
@@ -28,27 +27,26 @@ namespace lesson5
         {
             for (int i = 0; i < iArrayInternalToSort.Length; i++)
             {
-                j = i;
+                int j = i;
                 while (j > 0)
                 {
                     if (iArrayInternalToSort[j - 1] > iArrayInternalToSort[j])
                     {
-                        SwapMethodInsertion();
-                        
+                        SwapMethod(iArrayInternalToSort, j, j-1);
+                        j--;
                     }
                     else
                         break;
                 }
             }
         }
-        static int[] SwapMethodInsertion()
+        static int[] SwapMethod(int[] iArrayInternalToSort, int index1, int index2)
         {
             int iTempforSwap;
             
-            iTempforSwap = iArrayInternalToSort[j-1];
-            iArrayInternalToSort[j - 1] = iArrayInternalToSort[j];
-            iArrayInternalToSort[j] = iTempforSwap;
-            j--;
+            iTempforSwap = iArrayInternalToSort[index1];
+            iArrayInternalToSort[index1] = iArrayInternalToSort[index2];
+            iArrayInternalToSort[index2] = iTempforSwap;
             return iArrayInternalToSort;
         }
    
